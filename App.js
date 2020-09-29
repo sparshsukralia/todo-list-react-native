@@ -8,11 +8,12 @@ import {
   TouchableOpacity,
 } from "react-native";
 import Header from "./components/Header";
+import TodoItem from "./components/TodoItem";
 
 export default function App() {
   const [todos, setTodos] = useState([
     { text: "Make a tutorial", key: "1" },
-    { text: "Bing Watch Sherlock", key: "2" },
+    { text: "Binge Watch Sherlock", key: "2" },
     { text: "Make an app", key: "3" },
   ]);
 
@@ -25,7 +26,7 @@ export default function App() {
         <View style={styles.list}>
           <FlatList
             data={todos}
-            renderItem={({ item }) => <Text>{item.text}</Text>}
+            renderItem={({ item }) => <TodoItem item={item} />}
           />
         </View>
       </View>
