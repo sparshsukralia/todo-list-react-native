@@ -24,12 +24,18 @@ export default function App() {
     });
   };
 
+  const submitHandler = (text) => {
+    setTodos((prevTodos) => {
+      return [{ text: text, key: Math.random().toString() }, ...prevTodos];
+    });
+  };
+
   return (
     <View style={styles.container}>
       {/* header */}
       <Header />
       {/* to-do input */}
-      <AddTodo />
+      <AddTodo submitHandler={submitHandler} />
       <View style={styles.content}>
         {/* to form */}
         <View style={styles.list}>

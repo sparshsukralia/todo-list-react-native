@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
-export default function AddButton() {
+export default function AddButton({ submitHandler, text }) {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => submitHandler(text)}>
       <View style={styles.button}>
         <Text style={styles.buttonText}>ADD</Text>
       </View>
@@ -14,11 +14,10 @@ export default function AddButton() {
 const styles = StyleSheet.create({
   button: {
     backgroundColor: "#DC143C",
-    paddingHorizontal: 10,
+    paddingHorizontal: 15,
     paddingVertical: 12,
     marginTop: 40,
-    borderTopRightRadius: 3,
-    borderBottomRightRadius: 3,
+    marginBottom: 10,
   },
   buttonText: {
     color: "#fff",
