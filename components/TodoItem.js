@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-export default function TodoItem({ item }) {
+export default function TodoItem({ item, pressHandler }) {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => pressHandler(item.key)}>
       <Text style={styles.item}>{item.text}</Text>
     </TouchableOpacity>
   );
@@ -11,11 +11,12 @@ export default function TodoItem({ item }) {
 
 const styles = StyleSheet.create({
   item: {
-    width: 350,
-    backgroundColor: "pink",
-    padding: 20,
-    marginTop: 16,
-    fontSize: 20,
-    borderRadius: 8,
+    color: "black",
+    backgroundColor: "white",
+    padding: 15,
+    marginTop: 10,
+    marginLeft: 0,
+    marginRight: 0,
+    fontSize: 15,
   },
 });
