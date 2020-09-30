@@ -47,11 +47,11 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#F0F0F0",
+    backgroundColor: "#ddd",
     height: 900,
   },
   content: {
-    padding: 10,
+    // padding: 10,
   },
   list: {
     marginTop: 30,
