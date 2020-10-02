@@ -13,7 +13,7 @@ export default function AddButton({ submitHandler, text }) {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#DC143C",
+    backgroundColor: "#333399",
     paddingHorizontal: 15,
     paddingVertical: 12,
     marginTop: 40,

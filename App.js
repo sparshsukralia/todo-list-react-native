@@ -1,12 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  FlatList,
-  TouchableOpacity,
-} from "react-native";
+import { StyleSheet, View, FlatList } from "react-native";
 import Header from "./components/Header";
 import TodoItem from "./components/TodoItem";
 import AddTodo from "./components/AddTodo";
@@ -18,12 +12,14 @@ export default function App() {
     { text: "Make an app", key: "3" },
   ]);
 
+  // We're checking the key that we tapped on with the item's key in the array
   const pressHandler = (key) => {
     setTodos((prevTodos) => {
       return prevTodos.filter((todo) => todo.key != key);
     });
   };
 
+  // This function takes the input text and add that to the todos array
   const submitHandler = (text) => {
     setTodos((prevTodos) => {
       return [{ text: text, key: Math.random().toString() }, ...prevTodos];
@@ -53,7 +49,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#ddd",
+    backgroundColor: "#6699FF",
     height: 900,
   },
   content: {
@@ -61,5 +57,10 @@ const styles = StyleSheet.create({
   },
   list: {
     marginTop: 30,
+    backgroundColor: "#fff",
+    height: 500,
+    paddingTop: 50,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
   },
 });
