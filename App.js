@@ -37,6 +37,7 @@ export default function App() {
         { text: "GOT IT", onPress: () => console.log("alert closed") },
       ]);
     }
+    text.value = "";
   };
 
   return (
@@ -68,17 +69,21 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: "#6699FF",
-    height: 900,
+    // height: 900,
   },
   content: {
-    // padding: 10,
+    flex: 1,
+    // marginBottom: 20,
   },
   list: {
+    flex: 1,
     marginTop: 30,
     backgroundColor: "#fff",
-    height: 800,
-    paddingTop: 50,
+    // height: 800,
+    paddingTop: 30,
+    paddingBottom: 15,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
   },
