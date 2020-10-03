@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { StyleSheet, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList, Alert } from "react-native";
 import Header from "./components/Header";
 import TodoItem from "./components/TodoItem";
 import AddTodo from "./components/AddTodo";
@@ -21,9 +21,15 @@ export default function App() {
 
   // This function takes the input text and add that to the todos array
   const submitHandler = (text) => {
-    setTodos((prevTodos) => {
-      return [{ text: text, key: Math.random().toString() }, ...prevTodos];
-    });
+    if (text.length > 3) {
+      setTodos((prevTodos) => {
+        return [{ text: text, key: Math.random().toString() }, ...prevTodos];
+      });
+    } else {
+      Alert.alert("OOPS!", "To-do must be at least 4 chars long!", [
+        { text: "GOT IT", onPress: () => console.log("alert closed") },
+      ]);
+    }
   };
 
   return (
@@ -58,7 +64,7 @@ const styles = StyleSheet.create({
   list: {
     marginTop: 30,
     backgroundColor: "#fff",
-    height: 500,
+    height: 800,
     paddingTop: 50,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
