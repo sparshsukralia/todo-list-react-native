@@ -37,7 +37,6 @@ export default function App() {
         { text: "GOT IT", onPress: () => console.log("alert closed") },
       ]);
     }
-    text.value = "";
   };
 
   return (
