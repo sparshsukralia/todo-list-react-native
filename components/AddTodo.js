@@ -7,7 +7,7 @@ export default function AddTodo({ submitHandler }) {
 
   const changeHandler = (val) => {
     setText(val);
-    text.value = "";
+    text.target.value = "";
   };
 
   return (
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     marginTop: 40,
     marginBottom: 10,
-    marginLeft: 20,
+    marginLeft: 25,
     paddingHorizontal: 15,
     paddingVertical: 8,
     borderTopLeftRadius: 3,
